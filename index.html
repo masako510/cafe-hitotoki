@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <!-- 文字コードをUTF-8に設定します -->
+  <meta charset="UTF-8">
+
+  <!-- スマートフォンでも画面幅に合わせて表示します -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 検索結果などに表示されるページ説明です -->
+  <meta
+    name="description"
+    content="Cafe HITOTOKI。自家製チーズケーキと季節の紅茶を楽しみながら、静かな時間を過ごせる街角の小さなカフェです。"
+  >
+
+  <!-- ブラウザのタブに表示するタイトルです -->
+  <title>Cafe HITOTOKI｜日々の喧騒から、ひと匙の静けさを。</title>
+
+  <!-- Google Fontsへの接続を事前に準備します -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- Google Fontsへの接続を準備します -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Noto Serif JPとNoto Sans JPを読み込みます -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- 外部CSSファイルを読み込みます -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body id="top">
+
+  <!-- =====================================
+       ヘッダー
+  ====================================== -->
+
+  <header class="header">
+
+    <!-- ロゴをクリックするとページ上部へ移動します -->
+    <a href="#top" class="logo">
+      Cafe HITOTOKI
+    </a>
+
+    <!-- PC用のナビゲーションです -->
+    <nav class="nav" aria-label="メインナビゲーション">
+
+      <!-- こだわりへのリンクです -->
+      <a href="#concept">Concept</a>
+
+      <!-- メニューへのリンクです -->
+      <a href="#menu">Menu</a>
+
+      <!-- アクセスへのリンクです -->
+      <a href="#access">Access</a>
+
+      <!-- 予約へのリンクです -->
+      <a href="#reservation">Reservation</a>
+
+    </nav>
+
+    <!-- PC用の予約ボタンです -->
+    <a href="#reservation" class="header-reserve">
+      来店予約
+    </a>
+
+    <!-- スマートフォン用のハンバーガーボタンです -->
+    <button
+      class="hamburger"
+      type="button"
+      aria-label="メニューを開く"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+
+      <!-- ハンバーガーの1本目の線です -->
+      <span></span>
+
+      <!-- ハンバーガーの2本目の線です -->
+      <span></span>
+
+      <!-- ハンバーガーの3本目の線です -->
+      <span></span>
+
+    </button>
+
+  </header>
+
+
+  <!-- =====================================
+       スマートフォン用メニュー
+  ====================================== -->
+
+  <nav
+    id="mobile-menu"
+    class="mobile-menu"
+    aria-label="スマートフォン用ナビゲーション"
+  >
+
+    <!-- Conceptへのリンクです -->
+    <a href="#concept">Concept</a>
+
+    <!-- Menuへのリンクです -->
+    <a href="#menu">Menu</a>
+
+    <!-- Accessへのリンクです -->
+    <a href="#access">Access</a>
+
+    <!-- Reservationへのリンクです -->
+    <a href="#reservation">Reservation</a>
+
+  </nav>
+
+
+  <!-- =====================================
+       メインコンテンツ
+  ====================================== -->
+
+  <main>
+
+
+    <!-- =====================================
+         FV
+    ====================================== -->
+
+    <section class="hero">
+
+      <!-- 背景写真です -->
+      <div class="hero-image" aria-hidden="true"></div>
+
+      <!-- 写真の上に重ねる半透明レイヤーです -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- FVのメインコンテンツです -->
+      <div class="hero-content">
+
+        <!-- 店舗カテゴリーを伝える小さな文字です -->
+        <p class="hero-kicker">
+          COFFEE / TEA / SWEETS / SLOW TIME
+        </p>
+
+        <!-- メインキャッチコピーです -->
+        <h1>
+          日々の喧騒から、<br>
+          <em>ひと匙の静けさを。</em>
+        </h1>
+
+        <!-- カフェの特徴を短く伝えます -->
+        <p class="hero-lead">
+          自家製チーズケーキと季節の紅茶を楽しめる、<br>
+          街角の小さなカフェ。
+        </p>
+
+        <!-- カフェで過ごせる時間を伝えます -->
+        <p class="hero-description">
+          一杯の珈琲をゆっくり味わう時間。<br>
+          本を読んだり、誰かと話したり。<br>
+          何もしない時間も、ここでは大切に。
+        </p>
+
+        <!-- FVの予約CTAです -->
+        <a href="#reservation" class="button hero-button">
+
+          <!-- ボタンの文字です -->
+          <span>来店を予約する</span>
+
+          <!-- 矢印です -->
+          <span aria-hidden="true">→</span>
+
+        </a>
+
+        <!-- CTAの補足説明です -->
+        <p class="hero-note">
+          お席のご予約はこちらから
+        </p>
+
+      </div>
+
+      <!-- FV右下の装飾文字です -->
+      <p class="hero-index" aria-hidden="true">
+        Cafe HITOTOKI / 01
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         こだわり
+    ====================================== -->
+
+    <section class="section concept" id="concept">
+
+      <!-- セクション見出しです -->
+      <div class="section-heading fade-in">
+
+        <!-- セクション番号です -->
+        <p class="section-number">
+          01 / CONCEPT
+        </p>
+
+        <!-- セクションタイトルです -->
+        <h2>
+          何もしない時間も、<br>
+          <em>きっと贅沢。</em>
+        </h2>
+
+      </div>
+
+
+      <!-- こだわりのメインコンテンツです -->
+      <div class="concept-layout">
+
+        <!-- カフェの写真です -->
+        <figure class="concept-image fade-in">
+
+          <!-- 写真を表示します -->
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85"
+            alt="自然光が差し込む落ち着いたカフェで提供されるコーヒー"
+          >
+
+          <!-- 写真のキャプションです -->
+          <figcaption>
+            01 / HAND DRIP
+          </figcaption>
+
+        </figure>
+
+
+        <!-- こだわりの文章です -->
+        <div class="concept-copy fade-in">
+
+          <!-- 小さな縦ラベルです -->
+          <p class="vertical-label">
+            OUR PHILOSOPHY
+          </p>
+
+          <!-- 見出しです -->
+          <h3>
+            忙しい毎日に、<br>
+            小さな「余白」を。
+          </h3>
+
+          <!-- 説明文です -->
+          <p>
+            ここでは、急ぐ必要はありません。
+            一杯ずつ丁寧に淹れる珈琲の香り、
+            窓から差し込む午後の光、
+            焼き上がったばかりのチーズケーキ。
+          </p>
+
+          <!-- 説明文です -->
+          <p>
+            本を読んでも、誰かと話しても、
+            ただぼんやり過ごしてもいい。
+            日常から少し離れて、自分に戻るための時間を
+            お届けします。
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- こだわりポイントです -->
+      <div class="concept-points">
+
+        <!-- ポイント1です -->
+        <article class="glass-card fade-in">
+
+          <!-- 番号です -->
+          <span>01</span>
+
+          <!-- タイトルです -->
+          <h3>
+            HAND DRIP
+          </h3>
+
+          <!-- 説明文です -->
+          <p>
+            豆の個性を引き出す、丁寧な一杯。
+          </p>
+
+        </article>
+
+
+        <!-- ポイント2です -->
+        <article class="glass-card fade-in">
+
+          <!-- 番号です -->
+          <span>02</span>
+
+          <!-- タイトルです -->
+          <h3>
+            HOMEMADE
+          </h3>
+
+          <!-- 説明文です -->
+          <p>
+            店内で焼き上げる季節のスイーツ。
+          </p>
+
+        </article>
+
+
+        <!-- ポイント3です -->
+        <article class="glass-card fade-in">
+
+          <!-- 番号です -->
+          <span>03</span>
+
+          <!-- タイトルです -->
+          <h3>
+            SLOW SPACE
+          </h3>
+
+          <!-- 説明文です -->
+          <p>
+            時間を忘れて過ごせる静かな空間。
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         メニュー
+    ====================================== -->
+
+    <section class="section menu-section" id="menu">
+
+      <!-- メニューの見出しです -->
+      <div class="menu-heading section-heading fade-in">
+
+        <!-- 見出し左側です -->
+        <div>
+
+          <!-- セクション番号です -->
+          <p class="section-number">
+            02 / MENU
+          </p>
+
+          <!-- セクションタイトルです -->
+          <h2>
+            今日の気分に、<br>
+            <em>ひとつ選ぶ。</em>
+          </h2>
+
+        </div>
+
+        <!-- メニューの説明文です -->
+        <p>
+          季節の素材を使ったスイーツと、<br>
+          香りを楽しむ珈琲・紅茶をご用意しています。
+        </p>
+
+      </div>
+
+
+      <!-- =====================================
+           メニューBento Grid
+      ====================================== -->
+
+      <div class="menu-grid">
+
+
+        <!-- 大きなチーズケーキカードです -->
+        <article class="menu-item menu-item-large fade-in">
+
+          <!-- チーズケーキ写真です -->
+          <img
+            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1200&q=85"
+            alt="クリームを添えたチーズケーキ"
+            loading="lazy"
+          >
+
+          <!-- 商品情報です -->
+          <div class="menu-info">
+
+            <!-- カテゴリーです -->
+            <p>SWEETS</p>
+
+            <!-- 商品名です -->
+            <h3>
+              自家製チーズケーキ
+            </h3>
+
+            <!-- 商品説明です -->
+            <p class="menu-description">
+              ほどよい酸味と、なめらかな口どけ。
+            </p>
+
+            <!-- 価格です -->
+            <span class="price">
+              ¥650
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- コーヒーカードです -->
+        <article class="menu-item menu-item-coffee fade-in">
+
+          <!-- コーヒー写真です -->
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85"
+            alt="カップに入ったハンドドリップコーヒー"
+            loading="lazy"
+          >
+
+          <!-- 商品情報です -->
+          <div class="menu-info">
+
+            <!-- カテゴリーです -->
+            <p>COFFEE</p>
+
+            <!-- 商品名です -->
+            <h3>
+              本日のハンドドリップ
+            </h3>
+
+            <!-- 商品説明です -->
+            <p class="menu-description">
+              豆の香りと余韻を楽しむ一杯。
+            </p>
+
+            <!-- 価格です -->
+            <span class="price">
+              ¥550
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 紅茶カードです -->
+        <article class="menu-item menu-item-tea fade-in">
+
+          <!-- 紅茶写真です -->
+          <img
+            src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=85"
+            alt="透明なティーカップに入った紅茶"
+            loading="lazy"
+          >
+
+          <!-- 商品情報です -->
+          <div class="menu-info">
+
+            <!-- カテゴリーです -->
+            <p>TEA</p>
+
+            <!-- 商品名です -->
+            <h3>
+              季節の紅茶
+            </h3>
+
+            <!-- 商品説明です -->
+            <p class="menu-description">
+              茶葉の香りをゆっくり楽しむ一杯。
+            </p>
+
+            <!-- 価格です -->
+            <span class="price">
+              ¥500
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 季節のケーキカードです -->
+        <article class="menu-item menu-item-cake fade-in">
+
+          <!-- ケーキ写真です -->
+          <img
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85"
+            alt="カフェで提供されるチョコレートケーキ"
+            loading="lazy"
+          >
+
+          <!-- 商品情報です -->
+          <div class="menu-info">
+
+            <!-- カテゴリーです -->
+            <p>CAKE</p>
+
+            <!-- 商品名です -->
+            <h3>
+              季節のケーキ
+            </h3>
+
+            <!-- 商品説明です -->
+            <p class="menu-description">
+              その季節だけの味わいを。
+            </p>
+
+            <!-- 価格です -->
+            <span class="price">
+              ¥680
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- メニューの余白カードです -->
+        <article class="menu-note glass-card fade-in">
+
+          <!-- 縦ラベルです -->
+          <p class="vertical-label">
+            SEASONAL
+          </p>
+
+          <!-- メッセージです -->
+          <h3>
+            季節の素材を、<br>
+            その日の気分で。
+          </h3>
+
+          <!-- 説明文です -->
+          <p>
+            月ごとに変わる限定スイーツも
+            ご用意しています。
+          </p>
+
+        </article>
+
+      </div>
+
+
+      <!-- =====================================
+           メニュー直後のCTA
+      ====================================== -->
+
+      <div class="menu-cta fade-in">
+
+        <!-- CTAメッセージです -->
+        <p>
+          お気に入りの一杯を見つけたら、<br>
+          次はCafe HITOTOKIで。
+        </p>
+
+        <!-- 予約ボタンです -->
+        <a href="#reservation" class="text-button">
+
+          <!-- ボタン文字です -->
+          お席を予約する
+
+          <!-- 矢印です -->
+          <span aria-hidden="true">→</span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         アクセス
+    ====================================== -->
+
+    <section class="section access" id="access">
+
+      <!-- アクセス見出しです -->
+      <div class="section-heading fade-in">
+
+        <!-- セクション番号です -->
+        <p class="section-number">
+          03 / ACCESS
+        </p>
+
+        <!-- セクションタイトルです -->
+        <h2>
+          街角の、<br>
+          <em>小さな隠れ家。</em>
+        </h2>
+
+      </div>
+
+
+      <!-- アクセスコンテンツです -->
+      <div class="access-layout">
+
+        <!-- 店舗情報です -->
+        <div class="access-information fade-in">
+
+          <!-- ラベルです -->
+          <p class="vertical-label">
+            INFORMATION
+          </p>
+
+
+          <!-- 住所です -->
+          <div class="information-row">
+
+            <!-- 項目名です -->
+            <span>ADDRESS</span>
+
+            <!-- 内容です -->
+            <p>
+              東京都〇〇区〇〇 1-2-3
+            </p>
+
+          </div>
+
+
+          <!-- 営業時間です -->
+          <div class="information-row">
+
+            <!-- 項目名です -->
+            <span>OPEN</span>
+
+            <!-- 内容です -->
+            <p>
+              11:00 — 19:00
+            </p>
+
+          </div>
+
+
+          <!-- 定休日です -->
+          <div class="information-row">
+
+            <!-- 項目名です -->
+            <span>CLOSED</span>
+
+            <!-- 内容です -->
+            <p>
+              Tuesday
+            </p>
+
+          </div>
+
+
+          <!-- 最寄り駅です -->
+          <div class="information-row">
+
+            <!-- 項目名です -->
+            <span>ACCESS</span>
+
+            <!-- 内容です -->
+            <p>
+              〇〇駅から徒歩5分
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- 地図風ビジュアルです -->
+        <div class="map-visual fade-in">
+
+          <!-- 地図の装飾線です -->
+          <div class="map-line map-line-1"></div>
+
+          <!-- 地図の装飾線です -->
+          <div class="map-line map-line-2"></div>
+
+          <!-- 地図の装飾線です -->
+          <div class="map-line map-line-3"></div>
+
+          <!-- 店舗位置を表すピンです -->
+          <div class="map-pin">
+
+            <!-- 店舗の頭文字です -->
+            <span>H</span>
+
+          </div>
+
+          <!-- 地図のラベルです -->
+          <p>
+            MAP / Cafe HITOTOKI
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         最終予約CTA
+    ====================================== -->
+
+    <section class="reservation" id="reservation">
+
+      <!-- 背景装飾です -->
+      <div class="reservation-decoration" aria-hidden="true"></div>
+
+      <!-- CTA本体です -->
+      <div class="reservation-inner fade-in">
+
+        <!-- CTAの小さなラベルです -->
+        <p class="hero-kicker">
+          TAKE A BREATH
+        </p>
+
+        <!-- CTAタイトルです -->
+        <h2>
+          少しだけ、<br>
+          <em>自分に戻る時間。</em>
+        </h2>
+
+        <!-- CTA説明文です -->
+        <p class="reservation-description">
+          今日の予定に、静かな一時間を。<br>
+          Cafe HITOTOKIでお待ちしています。
+        </p>
+
+        <!-- 最終予約ボタンです -->
+        <a href="#" class="button button-large">
+
+          <!-- ボタン文字です -->
+          <span>来店を予約する</span>
+
+          <!-- 矢印です -->
+          <span aria-hidden="true">→</span>
+
+        </a>
+
+        <!-- 予約補足です -->
+        <p class="reservation-note">
+          ※予約システムへ移動します
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================
+       フッター
+  ====================================== -->
+
+  <footer class="footer">
+
+    <!-- 店名です -->
+    <p class="footer-logo">
+      Cafe HITOTOKI
+    </p>
+
+    <!-- 店舗カテゴリーです -->
+    <p>
+      coffee / tea / sweets / slow time
+    </p>
+
+    <!-- コピーライトです -->
+    <small>
+      © 2026 Cafe HITOTOKI
+    </small>
+
+  </footer>
+
+
+  <!-- jQueryを読み込みます -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- JavaScriptファイルを読み込みます -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
