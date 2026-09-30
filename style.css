@@ -1,0 +1,1250 @@
+/* ========================================
+   カラー
+======================================== */
+
+/* サイト全体で使う色をまとめます */
+:root {
+  /* 背景色です */
+  --base: #F7F3EA;
+
+  /* メインカラーです */
+  --main: #6B5143;
+
+  /* アクセントカラーです */
+  --accent: #7A8B72;
+
+  /* 本文色です */
+  --text: #44342D;
+
+  /* 補助的な本文色です */
+  --text-light: #66564D;
+
+  /* 白色です */
+  --white: #FFFFFF;
+
+  /* 境界線用の色です */
+  --line: rgba(107, 81, 67, 0.2);
+}
+
+
+/* ========================================
+   基本設定
+======================================== */
+
+/* すべての要素のサイズ計算方法を統一します */
+* {
+  box-sizing: border-box;
+}
+
+/* ページ全体のスクロールを滑らかにします */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ページ全体の基本設定です */
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--text);
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+/* 画像が余計な余白を持たないようにします */
+img {
+  display: block;
+  width: 100%;
+}
+
+/* リンクの初期装飾を消します */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ボタンのフォントを親要素と同じにします */
+button {
+  font: inherit;
+}
+
+/* 見出しの基本設定です */
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 500;
+}
+
+/* 強調文字にアクセントカラーを使います */
+em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+
+/* ========================================
+   フォーカス
+======================================== */
+
+/* キーボード操作時のフォーカスを見やすくします */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+/* 暗い背景では白色のフォーカスを使います */
+.reservation a:focus-visible {
+  outline-color: var(--white);
+}
+
+
+/* ========================================
+   ヘッダー
+======================================== */
+
+/* ヘッダー全体です */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  background: rgba(247, 243, 234, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* ロゴです */
+.logo {
+  font-family: "Noto Serif JP", serif;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+/* PC用ナビゲーションです */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* ナビゲーションリンクです */
+.nav a {
+  position: relative;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+/* ナビゲーションの下線です */
+.nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  background: var(--main);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* ホバーすると下線が伸びます */
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ヘッダー予約ボタンです */
+.header-reserve {
+  padding: 9px 18px;
+  border: 1px solid var(--main);
+  color: var(--main);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ヘッダー予約ボタンのホバーです */
+.header-reserve:hover {
+  background: var(--main);
+  color: var(--white);
+}
+
+
+/* ========================================
+   ハンバーガーメニュー
+======================================== */
+
+/* ハンバーガーボタンです */
+.hamburger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ハンバーガーの線です */
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 5px 0;
+  background: var(--main);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* ハンバーガーを開いたときの1本目です */
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+/* ハンバーガーを開いたときの2本目です */
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+/* ハンバーガーを開いたときの3本目です */
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ========================================
+   スマートフォンメニュー
+======================================== */
+
+/* スマートフォン用メニューです */
+.mobile-menu {
+  position: fixed;
+  top: 78px;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  display: none;
+  padding: 30px 25px;
+  background: rgba(247, 243, 234, 0.98);
+  border-bottom: 1px solid var(--line);
+}
+
+/* メニューを開いた状態です */
+.mobile-menu.is-open {
+  display: block;
+}
+
+/* スマートフォン用リンクです */
+.mobile-menu a {
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--main);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+
+/* ========================================
+   FV
+======================================== */
+
+/* FV全体です */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 130px 7vw 80px;
+}
+
+/* FV背景写真です */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url(
+    "https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=2200&q=90"
+  );
+  background-position: center;
+  background-size: cover;
+  filter: saturate(0.72);
+  transform: scale(1.02);
+}
+
+/* FV画像の上に重ねるレイヤーです */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(247, 243, 234, 0.94) 0%,
+      rgba(247, 243, 234, 0.74) 43%,
+      rgba(247, 243, 234, 0.18) 100%
+    );
+}
+
+/* FVコンテンツです */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(650px, 100%);
+  margin-left: 4vw;
+}
+
+/* FV上部のラベルです */
+.hero-kicker {
+  margin: 0 0 22px;
+  color: var(--main);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+/* FVメインタイトルです */
+.hero h1 {
+  color: var(--text);
+  font-size: clamp(36px, 5vw, 66px);
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+}
+
+/* FVの特徴説明です */
+.hero-lead {
+  margin: 25px 0 10px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 2;
+}
+
+/* FVの詳細説明です */
+.hero-description {
+  margin: 0 0 28px;
+  color: var(--text-light);
+  font-size: 12px;
+  line-height: 2.1;
+}
+
+/* FVの補足文です */
+.hero-note {
+  margin: 10px 0 0;
+  color: var(--text-light);
+  font-size: 9px;
+}
+
+/* FV右下の装飾文字です */
+.hero-index {
+  position: absolute;
+  right: 5vw;
+  bottom: 35px;
+  z-index: 2;
+  margin: 0;
+  color: var(--main);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+
+/* ========================================
+   CTAボタン
+======================================== */
+
+/* メインCTAボタンです */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 225px;
+  padding: 16px 21px;
+  background: var(--main);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s ease;
+}
+
+/* ボタン内の矢印です */
+.button span + span {
+  margin-left: 30px;
+  font-size: 17px;
+}
+
+/* ホバー時に0.3秒かけて少し拡大します */
+.button:hover {
+  transform: scale(1.04);
+}
+
+/* 大きなCTAボタンです */
+.button-large {
+  min-width: 250px;
+}
+
+
+/* ========================================
+   セクション共通
+======================================== */
+
+/* セクション上下に120pxの余白を設定します */
+.section {
+  padding: 120px 7vw;
+}
+
+/* セクション見出しです */
+.section-heading {
+  margin-bottom: 70px;
+}
+
+/* セクション番号です */
+.section-number {
+  margin: 0 0 22px;
+  color: var(--main);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+/* セクションタイトルです */
+.section-heading h2 {
+  color: var(--text);
+  font-size: clamp(34px, 4.5vw, 55px);
+  line-height: 1.65;
+}
+
+/* セクション説明です */
+.section-heading > p:last-child {
+  max-width: 450px;
+  margin-top: 20px;
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+
+/* ========================================
+   こだわり
+======================================== */
+
+/* こだわり部分を2カラムにします */
+.concept-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 9vw;
+}
+
+/* こだわり画像です */
+.concept-image {
+  position: relative;
+  margin: 0;
+}
+
+/* こだわり画像の高さです */
+.concept-image img {
+  height: 580px;
+  object-fit: cover;
+}
+
+/* 写真上のキャプションです */
+.concept-image figcaption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 8px 12px;
+  background: rgba(247, 243, 234, 0.92);
+  color: var(--main);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+/* こだわり本文です */
+.concept-copy {
+  max-width: 500px;
+}
+
+/* 縦ラベルです */
+.vertical-label {
+  position: relative;
+  margin: 0 0 30px;
+  padding-left: 18px;
+  color: var(--main);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+/* 縦ラベルの線です */
+.vertical-label::before {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 1px;
+  background: var(--accent);
+  content: "";
+}
+
+/* こだわり見出しです */
+.concept-copy h3 {
+  margin-bottom: 30px;
+  color: var(--text);
+  font-size: clamp(27px, 3vw, 40px);
+  line-height: 1.7;
+}
+
+/* こだわり本文です */
+.concept-copy > p:not(.vertical-label) {
+  margin: 0 0 20px;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 2.2;
+}
+
+
+/* ========================================
+   Glassmorphism
+======================================== */
+
+/* 透明感のあるカードです */
+.glass-card {
+  border: 1px solid rgba(107, 81, 67, 0.2);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 18px 50px rgba(107, 81, 67, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* ========================================
+   こだわりポイント
+======================================== */
+
+/* 3列のカードレイアウトです */
+.concept-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 55px;
+}
+
+/* ポイントカードです */
+.concept-points .glass-card {
+  min-height: 210px;
+  padding: 30px;
+}
+
+/* ポイント番号です */
+.concept-points span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* ポイントタイトルです */
+.concept-points h3 {
+  margin: 35px 0 10px;
+  color: var(--text);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+/* ポイント説明です */
+.concept-points p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 11px;
+}
+
+
+/* ========================================
+   メニュー
+======================================== */
+
+/* メニューセクションの背景色です */
+.menu-section {
+  background: #F1EBDD;
+}
+
+/* メニュー見出しを横並びにします */
+.menu-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+
+/* ========================================
+   Bento Grid
+======================================== */
+
+/* メニューをBento Gridにします */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-rows: 300px 300px 230px;
+  gap: 18px;
+}
+
+/* メニューカードです */
+.menu-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* チーズケーキを2段分にします */
+.menu-item-large {
+  grid-row: span 2;
+}
+
+/* メニュー画像です */
+.menu-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+/* ホバー時に画像を少し拡大します */
+.menu-item:hover img {
+  transform: scale(1.035);
+}
+
+/* 商品情報を写真の上に配置します */
+.menu-info {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  padding: 20px;
+  background: rgba(247, 243, 234, 0.94);
+  border: 1px solid rgba(107, 81, 67, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 商品カテゴリーです */
+.menu-info > p:first-child {
+  margin: 0 0 4px;
+  color: var(--main);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+/* 商品名です */
+.menu-info h3 {
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* 商品説明です */
+.menu-description {
+  margin: 5px 0;
+  color: var(--text-light);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* 商品価格です */
+.price {
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   季節メニュー
+======================================== */
+
+/* 季節メニューカードです */
+.menu-note {
+  grid-column: 1;
+  padding: 35px;
+}
+
+/* 季節メニュー見出しです */
+.menu-note h3 {
+  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1.7;
+}
+
+/* 季節メニュー説明です */
+.menu-note > p:last-child {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 11px;
+}
+
+
+/* ========================================
+   メニューCTA
+======================================== */
+
+/* メニュー直後のCTAです */
+.menu-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 60px;
+  padding-top: 35px;
+  border-top: 1px solid var(--line);
+}
+
+/* CTAメッセージです */
+.menu-cta p {
+  margin: 0;
+  color: var(--text);
+  font-family: "Noto Serif JP", serif;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* テキスト型CTAです */
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  color: var(--main);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* テキストCTAの矢印です */
+.text-button span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* ホバーすると矢印が動きます */
+.text-button:hover span {
+  transform: translateX(5px);
+}
+
+
+/* ========================================
+   アクセス
+======================================== */
+
+/* アクセスを2カラムにします */
+.access-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 35px;
+  align-items: stretch;
+}
+
+/* 店舗情報です */
+.access-information {
+  padding: 45px;
+  border-top: 1px solid var(--main);
+  border-bottom: 1px solid var(--main);
+}
+
+/* 情報1行です */
+.information-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+/* 最初の情報行です */
+.information-row:first-of-type {
+  margin-top: 35px;
+}
+
+/* 情報ラベルです */
+.information-row span {
+  color: var(--main);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+/* 情報本文です */
+.information-row p {
+  margin: 0;
+  color: var(--text);
+  font-size: 11px;
+}
+
+
+/* ========================================
+   地図
+======================================== */
+
+/* 地図風エリアです */
+.map-visual {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  background: #E5DDCF;
+}
+
+/* 地図の線です */
+.map-line {
+  position: absolute;
+  width: 150%;
+  height: 1px;
+  background: rgba(107, 81, 67, 0.18);
+  transform: rotate(-25deg);
+}
+
+/* 1本目の線です */
+.map-line-1 {
+  top: 20%;
+  left: -20%;
+}
+
+/* 2本目の線です */
+.map-line-2 {
+  top: 50%;
+  left: -20%;
+}
+
+/* 3本目の線です */
+.map-line-3 {
+  top: 80%;
+  left: -20%;
+}
+
+/* 店舗位置です */
+.map-pin {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--main);
+  border-radius: 50%;
+  background: rgba(247, 243, 234, 0.85);
+  transform: translate(-50%, -50%);
+}
+
+/* 店舗記号です */
+.map-pin span {
+  color: var(--main);
+  font-family: "Noto Serif JP", serif;
+  font-size: 21px;
+}
+
+/* 地図ラベルです */
+.map-visual > p {
+  position: absolute;
+  right: 25px;
+  bottom: 20px;
+  margin: 0;
+  color: var(--main);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+
+/* ========================================
+   予約CTA
+======================================== */
+
+/* 最終CTAの背景です */
+.reservation {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 7vw;
+  background: var(--main);
+}
+
+/* CTA背景の円形装飾です */
+.reservation-decoration {
+  position: absolute;
+  top: -180px;
+  right: -100px;
+  width: 550px;
+  height: 550px;
+  border: 1px solid rgba(247, 243, 234, 0.2);
+  border-radius: 50%;
+}
+
+/* CTAカードです */
+.reservation-inner {
+  position: relative;
+  z-index: 2;
+  width: min(700px, 100%);
+  padding: 65px;
+  border: 1px solid rgba(247, 243, 234, 0.35);
+  background: rgba(247, 243, 234, 0.96);
+  text-align: center;
+}
+
+/* CTAタイトルです */
+.reservation-inner h2 {
+  color: var(--text);
+  font-size: clamp(37px, 5vw, 60px);
+  line-height: 1.6;
+}
+
+/* CTA説明文です */
+.reservation-description {
+  margin: 25px 0 30px;
+  color: var(--text);
+  font-size: 12px;
+}
+
+/* CTA補足文です */
+.reservation-note {
+  margin: 12px 0 0;
+  color: var(--text-light);
+  font-size: 9px;
+}
+
+
+/* ========================================
+   フッター
+======================================== */
+
+/* フッターです */
+.footer {
+  padding: 55px 20px;
+  background: var(--base);
+  text-align: center;
+}
+
+/* フッターの店名です */
+.footer-logo {
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+/* フッターのカテゴリーです */
+.footer > p:nth-child(2) {
+  margin: 0 0 18px;
+  color: var(--text-light);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+
+/* コピーライトです */
+.footer small {
+  color: var(--text-light);
+  font-size: 8px;
+}
+
+
+/* ========================================
+   フェードイン
+======================================== */
+
+/* 表示前の状態です */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* 表示された状態です */
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 767px) {
+
+  /* PCナビゲーションを非表示にします */
+  .nav {
+    display: none;
+  }
+
+  /* PC予約ボタンを非表示にします */
+  .header-reserve {
+    display: none;
+  }
+
+  /* ハンバーガーを表示します */
+  .hamburger {
+    display: block;
+  }
+
+  /* FVを縦方向に配置します */
+  .hero {
+    min-height: 760px;
+    align-items: flex-end;
+    padding: 120px 20px 60px;
+  }
+
+  /* スマートフォンの背景位置を調整します */
+  .hero-image {
+    background-position: 62% center;
+  }
+
+  /* スマートフォン用の画像レイヤーです */
+  .hero-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(247, 243, 234, 0.97) 0%,
+        rgba(247, 243, 234, 0.74) 43%,
+        rgba(247, 243, 234, 0.12) 100%
+      );
+  }
+
+  /* FVコンテンツを1カラムにします */
+  .hero-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* FVタイトルです */
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.65;
+  }
+
+  /* FVリード文です */
+  .hero-lead {
+    font-size: 13px;
+  }
+
+  /* FV説明文です */
+  .hero-description {
+    font-size: 11px;
+    line-height: 2;
+  }
+
+  /* FV番号を非表示にします */
+  .hero-index {
+    display: none;
+  }
+
+  /* セクション余白です */
+  .section {
+    padding: 120px 20px;
+  }
+
+  /* セクション見出しの下の余白です */
+  .section-heading {
+    margin-bottom: 55px;
+  }
+
+  /* こだわりを1カラムにします */
+  .concept-layout {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  /* こだわり写真の高さです */
+  .concept-image img {
+    height: 430px;
+  }
+
+  /* ポイントカードを1カラムにします */
+  .concept-points {
+    grid-template-columns: 1fr;
+  }
+
+  /* ポイントカードの高さです */
+  .concept-points .glass-card {
+    min-height: 180px;
+  }
+
+  /* メニューを1カラムにします */
+  .menu-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  /* 各メニュー画像の高さです */
+  .menu-item-large,
+  .menu-item-coffee,
+  .menu-item-tea,
+  .menu-item-cake {
+    grid-row: auto;
+    height: 360px;
+  }
+
+  /* チーズケーキだけ少し大きくします */
+  .menu-item-large {
+    height: 430px;
+  }
+
+  /* 季節メニューカードを1カラムにします */
+  .menu-note {
+    grid-column: auto;
+    min-height: 280px;
+  }
+
+  /* メニューCTAを縦方向にします */
+  .menu-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* メニューCTA本文を調整します */
+  .menu-cta p {
+    font-size: 17px;
+  }
+
+  /* アクセスを1カラムにします */
+  .access-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* アクセス情報を調整します */
+  .access-information {
+    padding: 30px 0;
+  }
+
+  /* 地図の高さです */
+  .map-visual {
+    min-height: 300px;
+  }
+
+  /* CTAの高さです */
+  .reservation {
+    min-height: 650px;
+    padding: 100px 20px;
+  }
+
+  /* CTAカードを調整します */
+  .reservation-inner {
+    padding: 50px 22px;
+  }
+
+  /* CTAボタンを横幅いっぱいにします */
+  .button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+}
+
+
+/* ========================================
+   375px付近
+======================================== */
+
+@media (max-width: 400px) {
+
+  /* FVタイトルを小さくします */
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  /* FVリード文を小さくします */
+  .hero-lead {
+    font-size: 12px;
+  }
+
+  /* FV説明文を小さくします */
+  .hero-description {
+    font-size: 10px;
+  }
+
+  /* セクションタイトルを調整します */
+  .section-heading h2 {
+    font-size: 31px;
+  }
+
+  /* こだわりタイトルを調整します */
+  .concept-copy h3 {
+    font-size: 26px;
+  }
+
+  /* ロゴを少し小さくします */
+  .logo {
+    font-size: 17px;
+  }
+
+}
+
+
+/* ========================================
+   タブレット・PC
+======================================== */
+
+@media (min-width: 768px) {
+
+  /* ハンバーガーを非表示にします */
+  .hamburger {
+    display: none;
+  }
+
+  /* スマートフォンメニューを非表示にします */
+  .mobile-menu {
+    display: none !important;
+  }
+
+}
+
+
+/* ========================================
+   アニメーションを減らす設定
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* スクロールアニメーションを無効にします */
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* アニメーション時間をほぼゼロにします */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* フェードインを最初から表示します */
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+
+}
